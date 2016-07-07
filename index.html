@@ -8,35 +8,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!-- <link href="images/favicon.ico" rel="icon" type="image/x-icon" /> -->
 
     <!-- Link to Open Sans-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Main CSS file -->
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Main CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <!-- Animation CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <!-- Fast Select -->
-    <link rel="stylesheet" href="css/select.css">
-    <!-- NProgress -->
-    <link rel="stylesheet" href="css/nprogress.css">
   </head>
 
   <body class="home index">
-    <h2>Personal Website</h2>
+    <!-- Header -->
+    <div class="container">
+      <h2>Personal Website</h2>
+    </div>
+
+    <section class="form">
+      <h2 class="form_header">Translation Request</h2>
+      <p type="Name:">
+        <input placeholder="Write your name here.." id="from-name"/>
+        <span class="input_error_container" id="from-name-error">cannot leave field blank</span>
+      </p>
+      <p type="Email:">
+        <input placeholder="Let us know how to contact you back.." id="from-email"/>
+        <span class="input_error_container" id="from-email-error">cannot leave field blank</span>
+      </p>
+      <p type="Message:">
+        <textarea rows='1' placeholder='What would you like to tell us..' id="from-message"></textarea>
+        <span class="input_error_container" id="from-message-error">cannot leave field blank</span>
+      </p>
+      <button id="send">Send Message</button>
+      <div>
+        <span class="fa fa-envelope-o"></span> yolanda.newcomb@sbcglobal.net
+      </div>
+    </section>
     <!-- Javascript Files -->
     <!-- JQuery source -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <!-- Bootstrap js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- NProgress js file -->
-    <script type="text/javascript" src="js/nprogress.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <!-- Main js file -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 
 </html>

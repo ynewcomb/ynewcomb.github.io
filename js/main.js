@@ -83,3 +83,15 @@ function sendEmail(from_name, contact_email, message) {
     el.style.cssText = 'height:' + el.scrollHeight + 'px';
 	}
 })();
+
+// function that "translates" the page
+$(".spanish_eng_toggle").on("click", function(e) {
+	var toggle_text = $(this).data("val");
+	if(toggle_text === "ESP") {
+		$(this).text("EN");
+		$(this).data("val", "EN");
+	} else {
+		$(this).text("ESP");
+		$(this).data("val", "ESP");
+	}
+});

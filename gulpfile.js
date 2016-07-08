@@ -63,6 +63,13 @@ gulp.task('coffee', function() {
     .pipe(browserSync.stream());
 });
 
+// minify images (lossless) automatically!
+gulp.task('images', function() {
+  return gulp.src('./images/*')
+    .pipe(gulp.dest('./dist/images'))
+    .pipe(browserSync.stream());
+});
+
 // simply copy files to our output folder
 gulp.task('copy-extras', function() {
   gulp.src('*.html')
@@ -77,6 +84,7 @@ gulp.task('watch', function () {
   gulp.watch('./css/*.css', ['css']);
   gulp.watch('./css/*.scss', ['sass']);
   gulp.watch('./coffee/*', ['coffee']);
+  gulp.watch('./images/*', ['images']);
 });
 
 // deploy to github pages automatically
@@ -88,7 +96,7 @@ gulp.task('deploy', ['build'], function() {
 });
 
 // group together all the relevant 'build' tasks
-gulp.task('build', ['css', 'sass', 'js', 'coffee', 'copy-extras']);
+gulp.task('build', ['css', 'sass', 'js', 'coffee', 'copy-extras', 'images']);
 
 // by default, build everything, start the webserver, and watch our files for changes
 gulp.task('default', ['build', 'browser-sync', 'watch']);

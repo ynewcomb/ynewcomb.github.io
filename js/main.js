@@ -1,8 +1,18 @@
 // initialize EmailJS plugin
 emailjs.init("user_9XlP21UFyEIGPFx7mKChn");
-$("input").on("keyup", function(e) {
-	$(this).css("border-bottom", "2px solid #bebed2");
+$("input, textarea").on("keyup", function(e) {
+	$(this).css("border-bottom", "2px solid #049DBF");
 	$(this).next().hide();
+});
+
+$("input").on("blur", function(e) {
+	// unhighlight input field
+	$(this).css("border-bottom", "2px solid #B2B2B2");
+});
+
+$("input").on("focus", function(e) {
+	// highlight input field
+	$(this).css("border-bottom", "2px solid #049DBF");
 });
 
 $("#send").on("click", function(e) {
@@ -67,7 +77,6 @@ function sendEmail(from_name, contact_email, message) {
 	             
 	function autosize(){
 	  var el = this;
-	  console.log("Here");
 	  el.style.cssText = 'height:auto; padding:0';
     // for box-sizing other than "content-box" use:
     // el.style.cssText = '-moz-box-sizing:content-box';

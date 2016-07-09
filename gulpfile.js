@@ -75,6 +75,9 @@ gulp.task('copy-extras', function() {
   gulp.src('*.html')
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.stream());
+  gulp.src('CNAME')
+    .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.stream());
 });
 
 // watch our files for changes
